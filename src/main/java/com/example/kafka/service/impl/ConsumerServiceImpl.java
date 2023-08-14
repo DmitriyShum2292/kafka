@@ -2,26 +2,26 @@ package com.example.kafka.service.impl;
 
 import com.example.kafka.dto.Distance;
 import com.example.kafka.dto.Signal;
+import com.example.kafka.service.ConsumerService;
+import com.example.kafka.service.ProducerService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
-import org.springframework.kafka.support.KafkaHeaders;
-import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.stereotype.Component;
 
 import java.util.*;
 
 
 @Component
-public class ConsumerService  {
+public class ConsumerServiceImpl implements ConsumerService {
 
     @Autowired
     private ProducerService producerService;
     @Autowired
-    private DistanceCalculator distanceCalculator;
+    private DistanceCalculatorImpl distanceCalculator;
 
-    private Logger logger = LoggerFactory.getLogger(ConsumerService.class);
+    private Logger logger = LoggerFactory.getLogger(ConsumerServiceImpl.class);
 
      Map<Long, Signal> signals = Collections.synchronizedMap(new HashMap<>());
 

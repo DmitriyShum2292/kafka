@@ -2,12 +2,13 @@ package com.example.kafka.service.impl;
 
 import com.example.kafka.dto.Distance;
 import com.example.kafka.dto.Signal;
+import com.example.kafka.service.ProducerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ProducerService {
+public class ProducerServiceImpl implements ProducerService {
 
     @Autowired
     private KafkaTemplate<String, Signal> kafkaTemplate;

@@ -1,7 +1,7 @@
 package com.example.kafka.controller;
 
 import com.example.kafka.dto.Signal;
-import com.example.kafka.service.impl.ProducerService;
+import com.example.kafka.service.ProducerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
